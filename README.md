@@ -10,3 +10,23 @@ Em 2017, a Organização para a Alimentação e a Agricultura das Nações Unida
 - Rafael Gomes Alves - Aluno de doutorado
 - Salvador Pinillos Gimenez - Orientador
 - Fabio Lima - Coorientador
+
+## Plataforma 
+
+Este projeto é desenvolvido com base na plataforma [FIWARE](https://fiware.org/). 
+
+## Versões
+
+Cada versão da plataforma foi desenvolvida para testar um elemento da plataforma IoT. 
+
+### Versão 1
+
+A primeira versão da plataforma utiliza os seguintes componentes: 
+
+- [Orion Context Broker](https://github.com/telefonicaid/fiware-orion/)
+- [IoT Agent JSON](https://github.com/telefonicaid/iotagent-json/blob/master/README.md)
+- [MongoDB](https://www.mongodb.com/)
+
+A comunicação entre os componentes é apresentado na figura abaixo. 
+
+![](./img/version1.png)
