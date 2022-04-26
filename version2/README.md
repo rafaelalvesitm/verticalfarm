@@ -9,4 +9,4 @@ A segunda versão da plataforma utiliza os seguintes componentes:
 
 A comunicação entre os componentes é apresentado na figura abaixo.
 
-![Arquitetura da versão 2](./img/version2.png)
+![Arquitetura da versão 2](../img/version2.png)
