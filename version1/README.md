@@ -9,7 +9,7 @@ A primeira versão da plataforma utiliza os seguintes componentes:
 
 A comunicação entre os componentes é apresentado na figura abaixo. 
 
-![Arquitetura da versão 1](./img/version1.png)
+![Arquitetura da versão 1](../img/version1.png)
 
 Para o funcionamento da plataforma é necessário utilizar o [Docker](https://www.docker.com/). Para maiores detalhes da instalação e configuração do Docker, consulte o [Manual do Docker](https://docs.docker.com/install/).
 
