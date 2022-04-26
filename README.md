@@ -13,20 +13,21 @@ Em 2017, a Organização para a Alimentação e a Agricultura das Nações Unida
 
 ## Plataforma 
 
-Este projeto é desenvolvido com base na plataforma [FIWARE](https://fiware.org/). 
+Este projeto é desenvolvido com base na plataforma [FIWARE](https://fiware.org/). Recomenda-se realizar os tutorials disponíveis no site do FIWARE, em especial os tutoriais:
 
-## Versões
+- [Getting Started](https://fiware-tutorials.readthedocs.io/en/latest/getting-started.html)  
+- [Entity Relationships](https://fiware-tutorials.readthedocs.io/en/latest/entity-relationships.html)  
+- [CRUD Operations](https://fiware-tutorials.readthedocs.io/en/latest/crud-operations.html)  
+- [Context Providers](https://fiware-tutorials.readthedocs.io/en/latest/context-providers.html)  
+- [Altering the Context Programmatically](https://fiware-tutorials.readthedocs.io/en/latest/accessing-context.html)  
+- [Subscribing to Changes in Context](https://fiware-tutorials.readthedocs.io/en/latest/subscriptions.html)  
+- [Introduction to IoT Sensors](https://fiware-tutorials.readthedocs.io/en/latest/iot-sensors.html)  
+- [Provisioning an IoT Agent](https://fiware-tutorials.readthedocs.io/en/latest/iot-agent.html)  
+- [Persisting Context Data using Apache Flume (MongoDB, MySQL, PostgreSQL)](https://fiware-tutorials.readthedocs.io/en/latest/historic-context-flume.html)  
+- [Persisting Context Data using Apache NIFI (MongoDB, MySQL, PostgreSQL)](https://fiware-tutorials.readthedocs.io/en/latest/historic-context-nifi.html)  
+## Versões de Treinamento e aprendizado
 
-Cada versão da plataforma foi desenvolvida para testar um elemento da plataforma IoT. 
+Cada versão da plataforma foi desenvolvida para testar um elemento da plataforma IoT. Assim o aprendizado é construido passo a passo e a complexidade aumenta conforme a versão.
 
-### Versão 1
-
-A primeira versão da plataforma utiliza os seguintes componentes: 
-
-- [Orion Context Broker](https://github.com/telefonicaid/fiware-orion/)
-- [IoT Agent JSON](https://github.com/telefonicaid/iotagent-json/blob/master/README.md)
-- [MongoDB](https://www.mongodb.com/)
-
-A comunicação entre os componentes é apresentado na figura abaixo. 
-
-![](./img/version1.png)
+- [Versão 1](./version1/README.md): Apresenta o funcionamento dos componentes básicos da plataforma incluindo o Orion Context Broker, o IoT Agent JSON, o MongoDB e um servidor web utilizando o Django. Todos os componentes estão incluindos em containers independentes ligados pela mesma rede de comunicação. Para a operação dos containers utiliza-se o Docker. 
+- [Versão 2](./version2/README.md): Apresenta o funcionamento dos componentes básicos da plataforma incluindo o Orion Context Broker, o IoT Agent JSON, o MongoDB e uma Raspberry Pi 3 model B+ com um servidor web utilizando o Django. Todos os componentes com excessão da Raspberry Pi estão em containers independentes ligados pela mesma rede de comunicação. Para a operação dos containers utiliza-se o Docker. A configuração da Raspberry Pi é feita por SSH. 
