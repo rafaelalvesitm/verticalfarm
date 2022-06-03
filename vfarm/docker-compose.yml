@@ -1,0 +1,74 @@
+services:
+  orion:
+    image: fiware/orion
+    hostname: orion
+    container_name: fiware-orion
+    depends_on:
+      - mongo-db
+    networks:
+      - default
+    expose:
+      - "1026"
+    ports:
+      - "1026:1026" # localhost:1026
+    command: -dbhost mongo-db -logLevel DEBUG
+    healthcheck:
+      test: curl --fail -s http://orion:1026/version || exit 1
+      interval: 300s
+      
+  iot-agent-json:
+    image: fiware/iotagent-json
+    hostname: iot-agent-json
+    container_name: fiware-iot-agent-json
+    depends_on:
+        - mongo-db
+    networks:
+        - default
+    expose:
+        - "4041"
+        - "7896"
+    ports:
+        - "4041:4041"
+        - "7896:7896"
+    environment:
+        - IOTA_CB_HOST=orion
+        - IOTA_CB_PORT=1026
+        - IOTA_NORTH_PORT=4041
+        - IOTA_REGISTRY_TYPE=mongodb
+        - IOTA_LOG_LEVEL=DEBUG
+        - IOTA_TIMESTAMP=true
+        - IOTA_CB_NGSI_VERSION=v2
+        - IOTA_AUTOCAST=true
+        - IOTA_MONGO_HOST=mongo-db
+        - IOTA_MONGO_PORT=27017
+        - IOTA_MONGO_DB=iotagentjson
+        - IOTA_HTTP_PORT=7896
+        - IOTA_PROVIDER_URL=http://iot-agent:4041
+        - IOTA_DEFAULT_RESOURCE=/iot/json
+    healthcheck:
+      test: curl -X GET 'http://localhost:4041/iot/about'
+      interval: 300s
+
+  mongo-db:
+    image: mongo
+    hostname: mongo-db
+    container_name: db-mongo
+    expose:
+      - "27017"
+    ports:
+      - "27017:27017"
+    networks:
+      - default
+    volumes:
+      - mongo-db:/data
+    healthcheck:
+      test: |
+        host=`hostname --ip-address || echo '127.0.0.1'`; 
+        mongo --quiet $host/test --eval 'quit(db.runCommand({ ping: 1 }).ok ? 0 : 2)' && echo 0 || echo 1
+      interval: 300s
+      
+networks:
+  default:
+
+volumes:
+  mongo-db: ~
