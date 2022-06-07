@@ -13,7 +13,6 @@ A plataforma é composta pelos seguintes componentes:
 - [Cygnus](https://github.com/telefonicaid/fiware-cygnus) - Conector para persitir os dados no banco de dados.
 - [Grafana](https://grafana.com/) - Visualização dos dados.
 - [Web-application](https://www.djangoproject.com/) - Aplicação web para visualização dos dados e acionamento de atuadores. 
-- [Raspberry Pi 3 model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) - Gateway de comunicação. Utilizado para conectar sensores e atuadores na plataforma IoT. 
 
 # Como a plataforma funciona? 
 
@@ -21,4 +20,8 @@ A plataforma é composta pelos seguintes componentes:
 
 # Como colocar a plataforma para funcionar? 
 
-> Em desenvolvimento
+Para colocar a plataforma para funcionar, considerando o cenário de aplicação descrito anteriormente, abra a pasta [platform] no terminal e execute o comando:
+
+```bash
+$ ./setup.sh start
+```
