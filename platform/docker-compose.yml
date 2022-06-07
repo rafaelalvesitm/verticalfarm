@@ -7,6 +7,7 @@
 # - PostreSQL (PostgreSQL)
 # - Cygnus (Cygnus)
 # - Grafana (Grafana)
+# - Web Server (django)
 
 
 
@@ -133,7 +134,9 @@ services:
     environment:
         - GF_INSTALL_PLUGINS=https://github.com/orchestracities/grafana-map-plugin/archive/master.zip;grafana-map-plugin,grafana-clock-panel,grafana-worldmap-panel
 
+  # Create a web application to visualize data and send commands if necessary
   web-application:
+    image: web-app
     hostname: web-application
     container_name: web-application
     build: ./web-application
