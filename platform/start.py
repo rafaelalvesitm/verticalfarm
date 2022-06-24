@@ -24,7 +24,7 @@ payload = json.dumps(
     }
 )
 
-response = requests.request("POST", reqUrl, data=payload, headers=headersList)
+response = requests.request("POST", reqdUrl, data=payload, headers=headersList)
 
 if response.text == "{}":
     print("Service group created")

@@ -9,8 +9,6 @@
 # - Grafana (Grafana)
 # - Web Server (django)
 
-
-
 services:
 
   # Orion is the context broker
